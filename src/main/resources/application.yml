@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-cloud-laowang
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/zuul
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 12345
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 5
+      connection-test-query: select 1
+
+server:
+  port: 3701
+eureka:
+  client:
+    register-with-eureka: true #是否注册自身到eureka服务器
+    fetch-registry: true #是否从eureka服务器获取注册信息
+    registryFetchIntervalSeconds: 5
+    eurekaServiceUrlPollIntervalSeconds: 120
+    serviceUrl:
+      defaultZone: http://140.143.0.195:8761/eureka/
